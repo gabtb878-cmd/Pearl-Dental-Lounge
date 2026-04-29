@@ -3,12 +3,16 @@ require("connection.php");
 
 // Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST["fullname"]; // reading users input(name) from the form
-    $email = $_POST["email"]; //reading the email from the form
-    $number = $_POST["number"];
+    $First_name = $_POST["first-name"]; // reading users input(name) from the form
+    $Last_name = $_POST["last-name"];
+    $Email_Address = $_POST["email-address"]; //reading the email from the form
+    $Phone_number = $_POST["phone-number"];
+    $Current_Dental_Condition = $_POST["textarea"]
+    $Preferred_Date = $_POST["date"]
+    $Reason_for_visit = $_POST["reason"]
 
     // Insert into database
-    $sql = "INSERT INTO patients (name, email, number) VALUES ('$name', '$email', $number)";
+    $sql = "INSERT INTO appoinment (First_name, Last_name, Email_Address ,Phone_number,Current_Dental_Condition, Preferred_Date, Reason_for_visit ) VALUES ('$First_name', '$Last_name', '$Email_Address', '$Phone_number','$Current_Dental_Condition','$Preferred_Date','$Reason_for_visit')";
 
     if ($connection->query($sql) === TRUE) {
         echo "Data inserted successfully!";
@@ -18,19 +22,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<!-- HTML Form -->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Simple PHP MySQL Form</title>
-</head>
-<body>
-    <h2>Enter Your Info</h2>
-    <form method="POST" action="">
-        Name: <input type="text" name="fullname" required><br><br>
-        Email: <input type="email" name="email" required><br><br>
-        Number: <input type="number" name="number" required><br><br>
-        <input type="submit" value="Submit">
-    </form>
-</body>
-</html>
