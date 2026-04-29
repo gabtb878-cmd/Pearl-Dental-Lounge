@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Us | Pearl Dental Lounge</title>
+    <style>
+        :root {
+            --primary: #065a82;
+            --secondary: #0e7aa6;
+            --accent: #f2c94c;
+            --bg: #eef5fb;
+            --surface: #ffffff;
+            --text: #1f3a5f;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, #ecf4fb 0%, #d7e8f8 50%, #f9fcff 100%);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(6, 90, 130, 0.95); color: #fff; padding: 1rem 2rem;
+            position: sticky; top: 0; z-index: 100;
+        }
+        nav .brand { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.03em; }
+        nav .links { display: flex; gap: .8rem; }
+        nav .links a { color: #fff; text-decoration: none; font-weight: 600; }
+        .hero {
+            position: relative; text-align: center; padding: 4rem 1rem 2rem;
+            background: url('https://images.pexels.com/photos/1809644/pexels-photo-1809644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') center/cover no-repeat;
+            color: #fff;
+        }
+        .hero::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: rgba(5, 76, 112, .65);
+        }
+        .hero-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
+        .hero h1 { margin: 0; font-size: clamp(1.6rem, 4vw, 3rem); }
+        .hero p { margin-top: 1rem; font-size: 1.1rem; max-width: 760px; margin-left: auto; margin-right: auto; }
+        .section { padding: 2.5rem 1rem; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+        .card { background: var(--surface); border-radius: 14px; box-shadow: 0 8px 24px rgba(16, 40, 85, .12); padding: 1.4rem; }
+        .card h3 { margin: 0 0 0.8rem; color: var(--primary); }
+        .doctor-profile { display: grid; grid-template-columns: 240px 1fr; gap: 1.25rem; align-items: center; margin-top: 1.4rem; }
+        .doctor-photo { width: 100%; border-radius: 14px; height: 100%; object-fit: cover; border: 4px solid #fff; box-shadow: 0 10px 25px rgba(9, 44, 83, .35); }
+        .bio h2 { margin: 0 0 0.5rem; }
+        .bio p { margin: 0 0 .8rem; }
+        .cta{ display:inline-block; margin-top:1rem; background: var(--accent); color: #0d314e; font-weight:700; padding:.7rem 1.25rem; border-radius:50px; text-decoration:none; }
+        footer { text-align:center; padding: 1.2rem 1rem; margin-top: 2rem; color: #3f5e80; font-size: .95rem; }
+        @media(max-width: 760px){
+            .doctor-profile{grid-template-columns:1fr; justify-items:center; text-align:center;}
+            .bio{width:100%;}
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="brand">Pearl Dental Lounge</div>
+        <div class="links"><a href="Dental Clinic.html">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="register.html">Register</a></div>
+    </nav>
+
+    <section class="hero" role="banner">
+        <div class="hero-content">
+            <h1>About Pearl Dental Lounge</h1>
+            <p>Professional dentistry rooted in compassion and trust. Our clinic mixes modern technology with a gentle touch for your comfort and wellness.</p>
+            <a href="booking.html" class="cta">Book an Appointment</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>Who We Are</h2>
+            <p>Pearl Dental Lounge is a patient-centered clinic offering full-service dental care, from preventive check-ups to advanced cosmetic treatments. Since 2018, we have built a reputation for creating healthy smiles in a friendly, safe environment.</p>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Our Mission</h3>
+                    <p>Deliver personalized dental care that inspires confidence and supports long-term oral health.</p>
+                </div>
+                <div class="card">
+                    <h3>Our Vision</h3>
+                    <p>Become the most trusted dental practice in the region through innovation, excellence, and community service.</p>
+                </div>
+                <div class="card">
+                    <h3>Core Values</h3>
+                    <ul>
+                        <li>Patient comfort</li>
+                        <li>Integrity</li>
+                        <li>Quality care</li>
+                        <li>Continuous learning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section" style="background: #f4f8fd;">
+        <div class="container">
+            <h2>Our Professional Team</h2>
+            <div class="doctor-profile">
+                <img class="doctor-photo" src="https://img.freepik.com/free-photo/portrait-smiling-caucasian-man-dentist-posing-modern-dental-office_158595-7663.jpg" alt="Dr. Luke Tutor">
+                <div class="bio">
+                    <h2>Dr. Luke Tutor</h2>
+                    <p>Lead dentist with 15+ years in general, family, and cosmetic dentistry. Passionate about patient education and gentle care.</p>
+                    <p>Certified in digital smile design, composite restoration, and implant prosthetics.</p>
+                    <a href="register.html" class="cta">Meet the Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Pearl Dental Lounge. All rights reserved.</p>
+    </footer>
+</body>
+</html>

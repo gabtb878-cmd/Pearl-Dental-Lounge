@@ -1,0 +1,22 @@
+
+/* styling the heading 1 */
+h1{
+	background-color: gainsboro;
+	color: gold;
+	display: inline;
+	backdrop-filter: blur(10px);    /*Blurs what's behind it*/
+}
+
+.form{
+	background-color:greenyellow;
+	border-style: groove;
+	border-color: khaki;
+	margin: 20px;
+	border-radius: 25px;
+	border-width:10px;
+ } 
+
+ .button{
+ 	background-color: forestgreen;
+ 	color: whitesmoke;
+ }

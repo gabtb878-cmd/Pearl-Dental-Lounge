@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pearl Dental Lounge - Modern Family Dentistry</title>
+  <style>
+    :root {
+      --primary: #007a99;
+      --accent: #35b2d8;
+      --dark: #12343f;
+      --light: #f4fbff;
+      --text: #122a35;
+      --muted: #5a6f78;
+      --radius: 12px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      background: #eef5f9;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid #dce8ef;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1.45rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      border-radius: 50%;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    }
+
+    .logo-icon svg { width: 18px; height: 18px; fill: white; }
+
+    .logo-text { font-size: 1.1rem; font-weight: 800; }
+
+    nav a {
+      color: var(--dark);
+      text-decoration: none;
+      margin-left: 1.1rem;
+      font-weight: 600;
+    }
+
+    .cta-nav {
+      background: var(--primary);
+      color: #fff;
+      padding: 0.52rem 1rem;
+      border-radius: 8px;
+      transition: transform 0.2s ease;
+    }
+
+    .cta-nav:hover { transform: translateY(-1px); }
+
+    .hero {
+      background: linear-gradient(120deg, rgba(255,255,255,0.84), rgba(216, 235, 243, 0.95)),
+        url('https://images.pexels.com/photos/52527/dentist-pain-boring-dentistry-52527.jpeg?auto=compress&cs=tinysrgb&w=1400') center/cover no-repeat;
+      padding: 4.5rem 1rem 4rem;
+      margin-top: 0;
+    }
+
+    .hero .hero-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+      color: #102a33;
+      background: rgba(255, 255, 255, 0.84);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 0.75rem; }
+    .hero p { margin: 0.95rem auto 1.5rem; font-size: 1.03rem; max-width: 760px; }
+
+    .hero .btn-primary, .btn-secondary {
+      display: inline-block;
+      border: none;
+      border-radius: 10px;
+      padding: 0.76rem 1.35rem;
+      margin: 0.25rem;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-secondary { background: #e1ffff; color: var(--dark); }
+
+    section { padding: 2.8rem 1rem; }
+    .section-title { text-align: center; margin-bottom: 1.6rem; font-size: 2rem; color: var(--dark); }
+
+    .grid {
+      display: grid;
+      gap: 1.2rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      align-items: stretch;
+    }
+
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      border: 1px solid #d6dfe4;
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 { margin-top: 0; color: var(--primary); }
+    .card p { color: var(--muted); }
+
+    .office-photo {
+      width: 100%;
+      border-radius: var(--radius);
+      object-fit: cover;
+      height: 260px;
+      display: block;
+    }
+
+    .two-col {
+      display: grid;
+      gap: 1.3rem;
+      grid-template-columns: 1fr;
+    }
+
+    .form-section {
+      background: #fff;
+      border-radius: var(--radius);
+      border: 1px solid #d6dfe4;
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .form-group { margin-bottom: 1rem; }
+    .form-control,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      border: 1px solid #abc7d9;
+      background: #f7fcff;
+      border-radius: 8px;
+      padding: 0.68rem;
+      font-size: 0.97rem;
+      color: var(--dark);
+    }
+
+    .form-control:focus,
+    .form-select:focus,
+    .form-textarea:focus { outline: 2px solid rgba(0, 122, 153, 0.3); }
+
+    .submit-btn {
+      background: var(--primary);
+      color: #fff;
+      border: 0;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 700;
+      padding: 0.75rem 1.25rem;
+      margin-top: 0.8rem;
+    }
+
+    footer {
+      text-align: center;
+      color: #5a6f78;
+      font-size: 0.9rem;
+      padding: 1rem;
+      background: #f1f7fb;
+      border-top: 1px solid #dce8ef;
+    }
+
+    @media (min-width: 860px) {
+      header { padding: 1rem 2rem; }
+      .two-col { grid-template-columns: repeat(2, 1fr); }
+      .hero .hero-content { padding: 2.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="#home" aria-label="Pearl Dental Lounge home">
+      <span class="logo-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pearl icon">
+          <path d="M12 2c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16.2c-3.99 0-7.2-3.21-7.2-7.2S8.01 3.8 12 3.8s7.2 3.21 7.2 7.2-3.21 7.2-7.2 7.2z"/>
+          <path d="M12 6.7c-2.92 0-5.3 2.38-5.3 5.3s2.38 5.3 5.3 5.3 5.3-2.38 5.3-5.3-2.38-5.3-5.3-5.3zm0 8.6c-1.79 0-3.25-1.46-3.25-3.25S10.21 8.8 12 8.8 15.25 10.26 15.25 12.05 13.79 15.3 12 15.3z"/>
+        </svg>
+      </span>
+      <span class="logo-text">Pearl Dental Lounge</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#register" class="cta-nav">Register</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Trusted Family Dentistry in a Comfortable, Modern Clinic</h1>
+        <p>At Pearl Dental Lounge, our experienced team delivers preventive, restorative, and cosmetic care with empathy and precision.</p>
+        <a href="#register" class="btn-primary">Book Appointment</a>
+        <a href="#services" class="btn-secondary">Explore Services</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About Pearl Dental Lounge</h2>
+      <div class="two-col">
+        <img class="office-photo" src="https://www.1mg.com/articles/wp-content/uploads/2018/06/Dentist.jpg" alt="Dental team in clinic" />
+        <div>
+          <p>Pearl Dental Lounge combines advanced technology with a gentle approach to deliver a complete dental experience. Our mission is to help families maintain healthy smiles for life through personalized treatment and patient education.</p>
+          <ul>
+            <li>Board-certified dentists and specialists</li>
+            <li>State-of-the-art digital diagnostics</li>
+            <li>Comfort-first clinic environment</li>
+            <li>Clear pricing and flexible appointments</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2 class="section-title">Services We Offer</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>General Dentistry</h3>
+          <p>Cleanings, exams, preventive care, and pediatric dental health to keep every patient smiling.</p>
+        </article>
+        <article class="card">
+          <h3>Cosmetic Dentistry</h3>
+          <p>Teeth whitening, veneers, and smile makeovers combining aesthetics with structural balance.</p>
+        </article>
+        <article class="card">
+          <h3>Restorative Treatment</h3>
+          <p>Fillings, crowns, bridges, and implants executed with modern materials for lasting strength.</p>
+        </article>
+        <article class="card">
+          <h3>Emergency Care</h3>
+          <p>Same-day urgent appointments for pain relief, injuries, and sudden problems.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="team">
+      <h2 class="section-title">Meet Our Lead Clinician</h2>
+      <div class="card">
+        <h3>Dr. Luke Tutor</h3>
+        <p>Dr. Tutor is a seasoned dentist with over 12 years’ experience in patient-centered care, advanced restorative techniques, and digital smile design.</p>
+      </div>
+    </section>
+
+    <section id="register">
+      <h2 class="section-title">Register ;&amp; Request Appointment</h2>
+      <div class="two-col">
+        <div class="form-section">
+          <h3>New Patient Registration</h3>
+          <form>
+            <div class="form-group">
+              <label for="first-name">First Name</label>
+              <input id="first-name" class="form-control" type="text" placeholder="e.g Gabriel" required />
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name</label>
+              <input id="last-name" class="form-control" type="text" placeholder="e.g Bidena" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input id="email" class="form-control" type="email" placeholder="email@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input id="phone" class="form-control" type="tel" placeholder="e.g 012-345-6789" required />
+            </div>
+            <div class="form-group">
+              <label for="condition">Current Dental Condition</label>
+              <textarea id="condition" class="form-textarea" placeholder="e.g. sensitivity, braces, etc."></textarea>
+            </div>
+          </form>
+        </div>
+
+        <div class="form-section">
+          <h3>Appointment Booking</h3>
+          <form action="submit_booking.php" method="POST">
+            <div class="form-group">
+              <label for="appt-date">Preferred Date</label>
+              <input id="appt-date" class="form-control" type="date" required />
+            </div>
+            <div class="form-group">
+              <label for="reason">Reason for Visit</label>
+              <select id="reason" class="form-select" required>
+                <option value="checkup">Routine check-up</option>
+                <option value="cleaning">Teeth cleaning</option>
+                <option value="emergency">Emergency care</option>
+                <option value="cosmetic">Cosmetic consultation</option>
+              </select>
+            </div>
+            <button type="submit" class="submit-btn">Submit Request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>;&copy; 2026 Pearl Dental Lounge. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+'@;
