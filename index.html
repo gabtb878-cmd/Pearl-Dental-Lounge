@@ -218,6 +218,7 @@
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
       <a href="#register" class="cta-nav">Register</a>
     </nav>
   </header>
@@ -277,13 +278,50 @@
         <p>Dr. Tutor is a seasoned dentist with over 12 years’ experience in patient-centered care, advanced restorative techniques, and digital smile design.</p>
       </div>
     </section>
-
+    <section id="contact">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="two-col">
+        <div class="form-section">
+          <h3>Send us a Message</h3>
+          <form action="contact.php" method="POST">
+            <div class="form-group">
+              <label for="contact-name">Name</label>
+              <input id="contact-name" class="form-control" type="text" name="contact-name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email Address</label>
+              <input id="contact-email" class="form-control" type="email" name="contact-email" placeholder="your.email@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-phone">Phone Number (Optional)</label>
+              <input id="contact-phone" class="form-control" type="tel" name="contact-phone" placeholder="012-345-6789" />
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <input id="contact-subject" class="form-control" type="text" name="contact-subject" placeholder="How can we help?" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" class="form-textarea" name="contact-message" placeholder="Your message here..." rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+        <div class="form-section">
+          <h3>Contact Information</h3>
+          <p><strong>Phone:</strong><br>(555) 123-4567</p>
+          <p><strong>Email:</strong><br>info@pearldental.com</p>
+          <p><strong>Address:</strong><br>123 Smile Street<br>Dental City, DC 12345</p>
+          <p><strong>Hours:</strong><br>Mon - Fri: 8:00 AM - 6:00 PM<br>Sat: 9:00 AM - 2:00 PM<br>Sun: Closed</p>
+        </div>
+      </div>
+    </section>
     <section id="register">
       <h2 class="section-title">Register ;&amp; Request Appointment</h2>
       <div class="two-col">
         <div class="form-section">
           <h3>New Patient Registration</h3>
-          <form>
+          <form action="insert2.php" method="POST">
             <div class="form-group">
               <label for="first-name">First Name</label>
               <input id="first-name" class="form-control" type="text" name="first-name" placeholder="e.g Gabriel" required />
@@ -304,29 +342,26 @@
               <label for="condition">Current Dental Condition</label>
               <textarea id="condition" class="form-textarea" name="textarea" placeholder="e.g. sensitivity, braces, etc."></textarea>
             </div>
-          </form>
-        </div>
-
-        <div class="form-section">
-          <h3>Appointment Booking</h3>
-          <form action="insert.php" method="POST">
-            <div class="form-group">
-              <label for="appt-date">Preferred Date</label>
-              <input id="appt-date" class="form-control" name="date"type="date" required />
+            <div class="form-section">
+              <h3>Appointment Booking</h3>
+              <form action="insert2.php" method="POST">
+                <div class="form-group">
+                  <label for="appt-date">Preferred Date</label>
+                  <input id="appt-date" class="form-control" name="date"type="date" required />
+                </div>
+                <div class="form-group">
+                  <label for="reason">Reason for Visit</label>
+                  <select id="reason" name="reason" class="form-select" required>
+                    <option value="checkup">Routine check-up</option>
+                    <option value="cleaning">Teeth cleaning</option>
+                    <option value="emergency">Emergency care</option>
+                    <option value="cosmetic">Cosmetic consultation</option>
+                  </select>
+                </div>
+                <button type="submit" class="submit-btn">Submit Request</button>
+              </form>
             </div>
-            <div class="form-group">
-              <label for="reason">Reason for Visit</label>
-              <select id="reason" name="reason" class="form-select" required>
-                <option value="checkup">Routine check-up</option>
-                <option value="cleaning">Teeth cleaning</option>
-                <option value="emergency">Emergency care</option>
-                <option value="cosmetic">Cosmetic consultation</option>
-              </select>
-            </div>
-            <button type="submit" class="submit-btn">Submit Request</button>
-          </form>
-        </div>
-      </div>
+          </div>
     </section>
   </main>
 
